@@ -4,8 +4,9 @@ const client = new net.Socket()
 
 client.connect(3000, 'localhost', () => {
   console.log('Conectado al servidor')
-  console.log('Hola Servidor')
 })
+
+client.write('Hola servidor desde el cliente')
 
 client.on('data', (data) => {
   console.log('Mensaje: ', data.toString())
